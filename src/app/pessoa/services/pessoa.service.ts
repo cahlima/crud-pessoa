@@ -74,10 +74,6 @@ pessoas = pessoas.filter(pessoa => pessoa.id!==id);
 localStorage[LS_CHAVE] = JSON.stringify(pessoas);
 }
 
-
-
-
-
 }
 
   
