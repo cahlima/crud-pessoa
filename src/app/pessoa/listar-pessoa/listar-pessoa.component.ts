@@ -21,7 +21,5 @@ pessoas: Pessoa [] = [];
   listarTodos() : Pessoa[] {
 return this.pessoaService.listarTodos();
 
-
-
   }
 }
