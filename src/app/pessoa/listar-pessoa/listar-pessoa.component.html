@@ -5,27 +5,29 @@
     <tr>
         <th>Nome</th>
         <th>Idade</th>
- <th class="text-center">
-        <a [routerLink]="['/pessoas/novo']"
-        href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success">
-        <i class="fa fa-plus" aria-hidden="true"></i> Novo
+        <th>Data de Nascimento</th>
+ <th class="text-center"> <a [routerLink]="['/pessoas/novo']"
+        href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> Novo
     </a>
             </th> 
-<tr>
-<tr *ngFor="let pessoa of pessoas">
-    <td> {{pessoa.nome}}</td>
-    <td> {{pessoa.idade}}</td>
+    <tr>
+        <tr *ngFor="let pessoa of pessoas">
+            <td> {{pessoa.nome}}</td>
+            <td> {{pessoa.idade}}</td>
+            <td> {{pessoa.datadenascimento}}</td>
 
 
-    <td class="text-center" style="width: 300px">
-    <a href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info">
-    <i class="fa fa-edit" aria-hidden="true"></i> Editar
-    </a>
-    <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
-    <i class="fa fa-times" aria-hidden="true"></i> Remover
-    </a>
-    </td>
+        <td class="text-center" style="width: 300px"> <a [routerLink]="['/pessoas/editar', pessoa.id]"
+            href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info"> <i class="fa fa-edit" aria-hidden="true"></i> Editar
+            </a>
+                <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger"   (click)="remover($event, pessoa)">
+                <i class="fa fa-times" aria-hidden="true"></i> Remover
+                </a>
+             
     </tr>
-    </tbody>
-    </table>
+</tbody>
+</table>
     <p *ngIf= "pessoas.length==0" >Nenhuma pessoa cadastrada. </p>
+
+
+ 
