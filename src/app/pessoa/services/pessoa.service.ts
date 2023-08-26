@@ -17,11 +17,9 @@ export class PessoaService {
     return  pessoas ? JSON.parse(pessoas) : [];
 
   }
-inserir (pessoa: Pessoa): void {
-
-//Obtém a lista completa de pessoas
+  inserir (pessoa: Pessoa): void {
+    //Obtém a lista completa de pessoas
     const pessoas = this.listarTodos();
-
     //Seta o ID unico
     //Para não precisar gerenciar, será usdo o Timestamp
     //Quantidade de segundos desde 1970
@@ -36,45 +34,44 @@ inserir (pessoa: Pessoa): void {
 
   buscarPorID(id: number): Pessoa | undefined {
     //Obtém lista completa de pessoas
-  const pessoas: Pessoa[] = this.listarTodos();
+    const pessoas: Pessoa[] = this.listarTodos();
 
   // efetua a busca
   //find() : retorna o primeiro elemento da lista que satisfaz a condição caso contrario, undefined
-return pessoas.find(pessoa=> pessoa.id === id);
+    return pessoas.find(pessoa=> pessoa.id === id);
 
-  }
+    }
 
+  atualizar(pessoa: Pessoa): void {
+    // Obtém a lista completa de pessoas
+    const pessoas: Pessoa [] = this.listarTodos();
 
+    // varre a lista de pessoas
+    //quando encontra a pessoa com o mesmo id, altera a lista
+    pessoas.forEach((obj,index,objs)=> {
+    if (pessoa.id===obj.id) {
+    objs[index] = pessoa;
+    }
+      });
 
-atualizar(pessoa: Pessoa): void {
-// Obtém a lista completa de pessoas
-const pessoas: Pessoa [] = this.listarTodos();
+    //armazena a nova lista no Local Storage
+    localStorage[LS_CHAVE] = JSON.stringify(pessoas);
+    }
 
-// varre a lista de pessoas
-//quando encontra a pessoa com o mesmo id, altera a lista
-pessoas.forEach((obj,index,objs)=> {
-if (pessoa.id===obj.id) {
-objs[index] = pessoa;
-}
-  });
+    remover( id: number): void {
+    //Obtem a lista completa de pessoas
+    //Feito com let para poder ser alterada
+    let pessoas: Pessoa[] = this.listarTodos()
+    // filter(): retorna a mesma lista, com os registros que satisfazem,
+    // a condição,isto é, cujo id é diferente do passado na função
 
-//armazena a nova lista no Local Storage
-}
+    pessoas = pessoas.filter(pessoa => pessoa.id!==id);
 
-remover( id: number): void {
-//Obtem a lista completa de pessoas
-//Feito com let para poder ser alterada
-let pessoas: Pessoa[] = this.listarTodos()
-// filter(): retorna a mesma lista, com os registros que satisfazem,
-// a condição,isto é, cujo id é diferente do passado na função
+    //atualiza a lista de pessoas
+    localStorage[LS_CHAVE] = JSON.stringify(pessoas);
+    }
 
-pessoas = pessoas.filter(pessoa => pessoa.id!==id);
-
-//atualiza a lista de pessoas
-localStorage[LS_CHAVE] = JSON.stringify(pessoas);
-}
-
-}
+    }
 
   
 

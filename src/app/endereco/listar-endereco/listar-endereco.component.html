@@ -1,0 +1,29 @@
+<h1>Endereços</h1>
+
+<table class="table table-striped table-bordered table-hover">
+<tbody>
+    <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Data de Nascimento</th>
+ <th class="text-center"> <a [routerLink]=" ['/endereco/novo']"
+        href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> Novo
+    </a>
+            </th> 
+    <tr>
+        <tr *ngFor="let endereco of enderecos">
+            <td> {{endereco.rua}}</td>
+            <td> {{endereco.numero}}</td>
+            <td> {{endereco.complemento}}</td>
+            <td> {{endereco.bairro}}</td>
+            <td> {{endereco.cep}}</td>
+            <td> {{endereco.cidade}}</td>
+            <td> {{endereco.estado}}</td>
+
+             
+    </tr>
+</tbody>
+</table>
+    <p *ngIf= "enderecos.length ==0" >Nenhuma endereco cadastrado. </p>
+
+  
