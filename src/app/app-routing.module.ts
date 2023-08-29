@@ -21,11 +21,10 @@ const routes: Routes = [
   { path: 'pessoas/novo',
   component: InserirPessoaComponent },
 
-
-  { path: 'pessoas',
-  component: InserirPessoaComponent },
-
   { path: 'pessoas/editar/:id' ,
+    component: EditarPessoaComponent},
+
+    { path: 'pessoas/editar' ,
     component: EditarPessoaComponent},
 
   { path: 'endereco/listar',

@@ -6,23 +6,27 @@ import { AppComponent } from './app.component';
 import { PessoaModule } from './pessoa/pessoa.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { NumericoDirective } from './shared/directives/numerico.directive';
-import { MinimoValidatorDirective } from './shared/directives/minimo-validator.directive';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NumericoDirective,
-    MinimoValidatorDirective
+   
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PessoaModule,
     EnderecoModule,
-    RouterModule
   ],
+
+
+
   providers: [],
   bootstrap: [AppComponent]
 })

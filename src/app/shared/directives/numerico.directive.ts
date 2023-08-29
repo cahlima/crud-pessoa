@@ -1,7 +1,5 @@
-import { Directive } from '@angular/core';
-import { HostListener,ElementRef } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-
 
 @Directive({
   selector: '[numerico]',
@@ -10,34 +8,36 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     useExisting: NumericoDirective,
     multi: true
   }]
-
-
 })
-export class NumericoDirective  implements ControlValueAccessor {
-
+export class NumericoDirective implements ControlValueAccessor {
   onChange: any;
   onTouched: any;
 
+  constructor(private el: ElementRef) { }
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
-    }
-    registerOnTouched(fn: any): void {
+  }
+
+  registerOnTouched(fn: any): void {
     this.onTouched = fn;
-    }
-    writeValue(value: any): void {
+  }
+
+  writeValue(value: any): void {
     this.el.nativeElement.value = value;
-    }
+  }
 
-  constructor( private el: ElementRef) { }
+  @HostListener('keyup', ['$event'])
+  onKeyUp($event: any) {
+    let valor = $event.target.value;
+    // expressão regular: remove tudo que não é número
+    valor = valor.replace(/[\D]/g, '');
 
+    // atualiza o valor do campo de entrada
+    $event.target.value = valor;
+
+    // atualiza o model
+    this.onChange(valor);
+    this.onTouched();
+  }
 }
-@HostListener('keyup', ['$event'])
-onKeyUp($event: any) {
-let valor = $event.target.value;
-// expressão regular: remove tudo que não é número
-valor = valor.replace(/[\D]/g, '');
-}
-$event.target.value = valor;
-//atualzia model
-this.onChange(valor);

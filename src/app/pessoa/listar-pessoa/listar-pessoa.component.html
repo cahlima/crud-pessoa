@@ -6,15 +6,16 @@
         <th>Nome</th>
         <th>Idade</th>
         <th>Data de Nascimento</th>
- <th class="text-center"> <a [routerLink]="['/pessoas/novo']"
-        href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> Novo
+ <th class="text-center"> 
+    <a [routerLink]= "['/pessoas/novo']"
+    href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> Novo
     </a>
             </th> 
     <tr>
         <tr *ngFor="let pessoa of pessoas">
             <td> {{pessoa.nome}}</td>
             <td> {{pessoa.idade}}</td>
-            <td> {{pessoa.datadenascimento}}</td>
+            <td> {{pessoa.dataNascimento}} </td>
 
 
         <td class="text-center" style="width: 300px"> <a [routerLink]="['/pessoas/editar', pessoa.id]"

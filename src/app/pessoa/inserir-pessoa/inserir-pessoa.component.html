@@ -20,16 +20,25 @@
                     [(ngModel)] ="pessoa.idade"
                     #idade="ngModel" required>
                     numerico
+                    minimoValidator
+                    valorMinimo="18"
+                    required>
                     <div *ngIf="idade.errors && (idade.dirty || idade.touched)"  class= "alert alert-danger">
                     <div [hidden]="!idade.errors['required']" > Digite a idade da pessoa. </div>
         </div>
+        <div [hidden]="!idade.errors?.['minimo']">
+                       Idade deve ser maior ou igual a 18
+            </div>
+            </div>
         <div class="form-group">
                     <label for="datadenascimento">Data de Nascimento:</label>
-                    <input type="text" class="form-control" id="datadenascimento" name="datadenascimento"
-                    [(ngModel)] ="pessoa.datadenascimento"
-                    #datadenascimento="ngModel" required>
-                    <div *ngIf="datadenascimento.errors && (datadenascimento.dirty || datadenascimento.touched)"  class= "alert alert-danger">
-                    <div [hidden]="!datadenascimento.errors['required']" > Digite a data de nascimento da pessoa. </div>
+                    <input type="text" class="form-control" id="datanascimento" name="datanascimento"
+                    [(ngModel)] ="pessoa.dataNascimento"
+                    #dataNascimento="ngModel" 
+                    mask="d0/m0/0000"
+                    required>
+                    <div *ngIf="dataNascimento.errors && (dataNascimento.dirty || dataNascimento.touched)"  class= "alert alert-danger">
+                    <div [hidden]="!dataNascimento.errors['required']" > Digite a data de nascimento da pessoa. </div>
         </div>
 
         <div class="form-group">
