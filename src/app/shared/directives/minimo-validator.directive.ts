@@ -18,8 +18,7 @@ export class MinimoValidatorDirective implements Validator, OnInit{
 
   @Input("valorMinimo") valorMinimo: string = "0";
 
-  constructor() { }
-  ngOnInit(): void {
+  constructor() { } ngOnInit(): void {
     
   }
 

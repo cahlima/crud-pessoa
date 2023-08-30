@@ -11,6 +11,7 @@ import { MinimoValidatorDirective } from '../shared/directives/minimo-validator.
 import { NgModel } from '@angular/forms';
 
 import { SharedModule } from '../shared';
+import { ModalPessoaComponent } from './modal-pessoa/modal-pessoa.component';
 
 
 
@@ -20,7 +21,8 @@ import { SharedModule } from '../shared';
     InserirPessoaComponent,
     EditarPessoaComponent,
     NumericoDirective,
-    MinimoValidatorDirective
+    MinimoValidatorDirective,
+    ModalPessoaComponent
   
   ],
 

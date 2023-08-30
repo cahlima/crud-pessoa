@@ -24,7 +24,10 @@
                 <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger"   (click)="remover($event, pessoa)">
                 <i class="fa fa-times" aria-hidden="true"></i> Remover
                 </a>
-             
+                <button type="button" class="btn btn-xs btn-info"
+                (click)="abrirModalPessoa(pessoa)" >
+                <i class="fa fa-eye" aria-hidden="true"></i> Ver
+                </button>
     </tr>
 </tbody>
 </table>

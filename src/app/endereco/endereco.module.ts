@@ -4,17 +4,27 @@ import { EnderecoService } from './services/endereco.service';
 import { ListarEnderecoComponent } from './listar-endereco/listar-endereco.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.component';
+import { InserirEnderecoComponent } from './inserir-endereco/inserir-endereco.component';
+import { EditarEnderecoComponent } from './editar-endereco/editar-endereco.component';
+import { NgModel } from '@angular/forms';
+import { SharedModule } from '../shared';
 
 
 
 @NgModule({
   declarations: [
-    ListarEnderecoComponent
+    ListarEnderecoComponent,
+    ModalEnderecoComponent,
+    InserirEnderecoComponent,
+    EditarEnderecoComponent
 
   ],
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    RouterModule,
+    FormsModule
   ],
 
   providers: [
@@ -23,3 +33,4 @@ EnderecoService
   ]
 })
 export class EnderecoModule { }
+
