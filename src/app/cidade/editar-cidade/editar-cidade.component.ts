@@ -5,6 +5,8 @@ import { Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Route } from '@angular/router';
 import { Cidade } from 'src/app/shared/models/cidade.model';
+import { EstadoServiceTsService } from 'src/app/estado/services/estado.service.ts.service'; 
+
 
 
 @Component({
@@ -18,14 +20,14 @@ export class EditarCidadeComponent implements OnInit {
 
   @ViewChild('formCidade') formCidade! : NgForm;
   cidade! : Cidade;
-  estados: Estado[]
+  estados!: Estado;
 
   constructor (
 
     private cidadeService: CidadeService,
     private router: Router,
     private route: ActivatedRoute,
-    private estadoService: EstadoService,
+    private estadoService: EstadoServiceTsService
 
     ) {}
   ngOnInit(): void {
@@ -52,4 +54,5 @@ export class EditarCidadeComponent implements OnInit {
     }
     }
 }
+import { Estado } from 'src/app/shared';
 

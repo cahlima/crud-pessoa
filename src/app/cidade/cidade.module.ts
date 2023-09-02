@@ -16,7 +16,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ListarCidadeComponent,
     InserirCidadeComponent,
     EditarCidadeComponent,
-    ModalCidadeComponent
+    ModalCidadeComponent,
     
   ],
 

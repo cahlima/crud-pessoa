@@ -22,7 +22,7 @@ export class InserirCidadeComponent implements OnInit {
   constructor (
 
   private cidadeService: CidadeService,
-  private estadoService: EstadoService,
+  private estadoService: EstadoServiceTsService,
   private router: Router) {}
 
   ngOnInit(): void {
