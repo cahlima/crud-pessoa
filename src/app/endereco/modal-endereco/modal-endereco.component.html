@@ -3,13 +3,15 @@
     (click)="activeModal.dismiss()">
     <span aria-hidden="true">&times;</span>
     </button>
-    <h4 class="modal-title" id="modalLabel"> Endereco </h4>
+    <h4 class="modal-title" id="modalLabel"> Endereço </h4>
     </div>
     <div class="modal-body text-center">
     <div>
-    <p>Nome: {{ endereco.rua }} </p>
-    <p>Idade: {{ endereco.numerocasa }}</p>
-    <p>Data Nascimento: {{ endereco.complemento}} </p>
+    <p>Rua: {{ endereco.rua }} </p>
+    <p>Numero: {{ endereco.numerocasa }}</p>
+    <p>Comlplemento: {{ endereco.complemento}} </p>
+    <p>Bairro: {{ endereco.bairro}} </p>
+    <p>{{ endereco.residencial! ? "Residencial" : "Comercial" }} </p>
     </div>
     </div>
     <div class="modal-footer">

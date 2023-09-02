@@ -8,6 +8,10 @@ import { EnderecoModule } from './endereco/endereco.module';
 import { NumericoDirective } from './shared/directives/numerico.directive';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared';
+import { CidadeModule } from './cidade/cidade.module';
+import { EstadoModule } from './estado/estado.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -15,6 +19,7 @@ import { SharedModule } from './shared';
 @NgModule({
   declarations: [
     AppComponent,
+  
    
    
   ],
@@ -23,11 +28,17 @@ import { SharedModule } from './shared';
     AppRoutingModule,
     PessoaModule,
     EnderecoModule,
+    CidadeModule,
+    EstadoModule,
+    NgbModule, 
+    FormsModule,
+    NgSelectModule
   ],
 
 
 
   providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

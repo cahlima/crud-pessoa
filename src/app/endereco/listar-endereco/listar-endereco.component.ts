@@ -21,9 +21,9 @@ export class ListarEnderecoComponent implements OnInit {
   ngOnInit(): void {
       this.enderecos = this.listarTodos();
 
-      //abrirModalPessoa(pessoa: Pessoa) {
-       // const modalRef = this.modalService.open(ModalPessoaComponent);
-      //  modalRef.componentInstance.pessoa = pessoa;
+      //abrirModalEnderecos(endereco: Endereco) {
+       // const modalRef = this.modalService.open(ModalEnderecoComponent);
+      //  modalRef.componentInstance.endereco = endereco;
   }
   
    
@@ -31,11 +31,12 @@ export class ListarEnderecoComponent implements OnInit {
   return this.enderecoService.listarTodos();
   
     }
-    remover($event: any, pessoa: Endereco): void {
+    remover($event: any, endereco: Endereco): void {
       $event.preventDefault();
-      if (confirm (`Deseja realmente remover este endereço ${this.endereco.nome}?`)) {
-      this.enderecoService.remover(this.Endereco.id!);
-      this.enderecos = this.listarTodos();
+      if (confirm (`Deseja realmente remover este endereço ${endereco.rua}?`)) {
+      this.enderecoService.remover(endereco.id!);
+      this.enderecos = this.listarTodos(); 
+
       }
   }
   }

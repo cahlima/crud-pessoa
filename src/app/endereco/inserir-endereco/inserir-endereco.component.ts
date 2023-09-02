@@ -29,7 +29,7 @@ export class InserirEnderecoComponent {
 inserir(): void {
   if (this.formEndereco.form.valid) {
   this.enderecoService.inserir(this.endereco);
-  this.router.navigate( ["/enderecos"] );
+  this.router.navigate( ["/endereco"] );
   }
   }
 }

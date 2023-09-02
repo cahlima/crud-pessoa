@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { Endereco } from 'src/app/shared';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Endereco } from 'src/app/shared';
 
 @Component({
   selector: 'app-modal-endereco',
@@ -15,13 +15,5 @@ export class ModalEnderecoComponent {
   
 constructor(public activeModal: NgbActiveModal) {}
 ngOnInit(): void {
-
-
-export class Endereco {
-  // outras propriedades do endereço
-  @Input() numerocasa!: number; // Certifique-se de que 'numero' está definido corretamente
 }
 }
-
-
-

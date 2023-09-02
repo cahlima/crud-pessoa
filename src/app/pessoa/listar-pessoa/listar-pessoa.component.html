@@ -16,6 +16,7 @@
             <td> {{pessoa.nome}}</td>
             <td> {{pessoa.idade}}</td>
             <td> {{pessoa.dataNascimento}} </td>
+            <td> {{pessoa.motorista! ? pessoa.motorista : "Não" }} </td>
 
 
         <td class="text-center" style="width: 300px"> <a [routerLink]="['/pessoas/editar', pessoa.id]"

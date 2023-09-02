@@ -9,6 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalPessoaComponent {
   @Input() pessoa!: Pessoa;
+  
   constructor(public activeModal: NgbActiveModal) {}
   ngOnInit(): void {
   }

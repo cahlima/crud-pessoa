@@ -6,6 +6,12 @@ import { EditarPessoaComponent } from './pessoa/editar-pessoa/editar-pessoa.comp
 import { ListarEnderecoComponent } from './endereco/listar-endereco/listar-endereco.component';
 import { InserirEnderecoComponent } from './endereco/inserir-endereco/inserir-endereco.component';
 import { EditarEnderecoComponent } from './endereco/editar-endereco/editar-endereco.component';
+import { ListarCidadeComponent } from './cidade/listar-cidade/listar-cidade.component';
+import { ListarEstadoComponent } from './estado/listar-estado/listar-estado.component';
+import { InserirEstadoComponent } from './estado/inserir-estado/inserir-estado.component';
+import { InserirCidadeComponent } from './cidade/inserir-cidade/inserir-cidade.component';
+import { EditarCidadeComponent } from './cidade/editar-cidade/editar-cidade.component';
+import { EditarEstadoComponent } from './estado/editar-estado/editar-estado.component';
 
 const routes: Routes = [
 
@@ -37,6 +43,27 @@ const routes: Routes = [
 
     { path: 'endereco/editar/:id',
     component: EditarEnderecoComponent},
+
+    { path: 'cidade/listar',
+    component: ListarCidadeComponent },
+
+    { path: 'cidade/novo',
+    component: InserirCidadeComponent},  
+
+    { path: 'cidade/editar/:id',
+    component: EditarCidadeComponent},
+
+    { path: 'estado/listar',
+    component: ListarEstadoComponent },
+
+    { path: 'estado/novo',
+    component: InserirEstadoComponent},  
+
+    { path: 'estado/editar/:id',
+    component: EditarEstadoComponent},
+
+    
+
 ];
 
 @NgModule({
