@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 import { Route } from '@angular/router';
 import { Cidade } from 'src/app/shared/models/cidade.model';
 import { EstadoServiceTsService } from 'src/app/estado/services/estado.service.ts.service'; 
-
+import { EstadoModule } from 'src/app/estado/estado.module';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class EditarCidadeComponent implements OnInit {
 
   @ViewChild('formCidade') formCidade! : NgForm;
   cidade! : Cidade;
-  estados!: Estado;
+  estado: Estado[] = [];
 
   constructor (
 

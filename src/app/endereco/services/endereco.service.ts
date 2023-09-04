@@ -17,7 +17,7 @@ listarTodos(): Endereco [] {
 
   }
 
-inserir ( novoEndereco: Endereco): void {
+inserir ( enderecos: Endereco): void {
 
   //Obtém a lista completa de endereços
   const endereco = this.listarTodos();
@@ -25,13 +25,13 @@ inserir ( novoEndereco: Endereco): void {
   //Seta o ID unico
   //Para não precisar gerenciar, será usdo o Timestamp
   //Quantidade de segundos desde 1970
-  novoEndereco.id = new Date().getTime();
+ enderecos.id = new Date().getTime();
 
   //Adiciona no final da lista
-  endereco.push (novoEndereco);
+  endereco.push (enderecos);
 
   //Armazena no Local Storage
-  localStorage[LS_CHAVE] = JSON.stringify(novoEndereco);
+  localStorage[LS_CHAVE] = JSON.stringify(Endereco);
 }
 
 buscarPorID(id: number): Endereco | undefined {
@@ -45,15 +45,20 @@ buscarPorID(id: number): Endereco | undefined {
 
   }
 
-  atualizar(enderecoAtualizado: Endereco): void {
-    let enderecos: Endereco[] = this.listarTodos();
+  atualizar(enderecos: Endereco): void {
+   // Obtém a lista completa de pessoas
+   const endereco: Endereco [] = this.listarTodos();
 
-    const index = enderecos.findIndex(e => e.id === enderecoAtualizado.id);
-    if (index !== -1) {
-      enderecos[index] = enderecoAtualizado;
-      localStorage.setItem(LS_CHAVE, JSON.stringify(enderecos));
-    }
-  }
+   // varre a lista de pessoas
+   //quando encontra a pessoa com o mesmo id, altera a lista
+   endereco.forEach((obj,index,objs)=> {
+   if (enderecos.id===obj.id) {objs[index] = obj;
+   }
+     });
+
+   //armazena a nova lista no Local Storage
+   localStorage[LS_CHAVE] = JSON.stringify(enderecos);
+   }
 
   remover( id: number): void {
 

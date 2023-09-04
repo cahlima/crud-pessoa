@@ -17,6 +17,11 @@ export class ListarEnderecoComponent implements OnInit {
 
   constructor(private enderecoService : EnderecoService,
     private modalService: NgbModal) { }
+
+    abrirModalEndereco(endereco: Endereco) {
+      const modalRef = this.modalService.open(ModalEnderecoComponent);
+      modalRef.componentInstance.endereco= endereco;
+      }
   
   ngOnInit(): void {
       this.enderecos = this.listarTodos();

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Pessoa } from 'src/app/shared';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-pessoa',

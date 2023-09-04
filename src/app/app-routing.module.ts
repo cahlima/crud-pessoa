@@ -35,6 +35,9 @@ const routes: Routes = [
     { path: 'pessoas/editar' ,
     component: EditarPessoaComponent},
 
+    { path: 'endereco',
+    redirectTo: 'endereco/listar' },
+
   { path: 'endereco/listar',
     component: ListarEnderecoComponent },
 
@@ -44,6 +47,9 @@ const routes: Routes = [
     { path: 'endereco/editar/:id',
     component: EditarEnderecoComponent},
 
+    { path: 'cidade',
+    redirectTo: 'cidade/listar' },
+
     { path: 'cidade/listar',
     component: ListarCidadeComponent },
 
@@ -52,6 +58,9 @@ const routes: Routes = [
 
     { path: 'cidade/editar/:id',
     component: EditarCidadeComponent},
+
+    { path: 'estado',
+    redirectTo: 'estado/listar' },
 
     { path: 'estado/listar',
     component: ListarEstadoComponent },
