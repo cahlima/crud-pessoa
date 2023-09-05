@@ -12,6 +12,8 @@ import { CidadeModule } from './cidade/cidade.module';
 import { EstadoModule } from './estado/estado.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -19,6 +21,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
   declarations: [
     AppComponent,
+    AuthModule,
+    HomeComponent,
   
    
    
@@ -32,7 +36,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     EstadoModule,
     NgbModule, 
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    AuthModule,
   ],
 
 
