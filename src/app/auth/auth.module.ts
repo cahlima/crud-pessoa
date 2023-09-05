@@ -13,7 +13,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule, NgModule
+    RouterModule, 
+    
   ]
 })
 export class AuthModule { }

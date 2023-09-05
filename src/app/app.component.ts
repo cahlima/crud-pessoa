@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from './shared/models/login.model';
 import { Usuario } from './shared';
+import { LoginService } from './auth/services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { Usuario } from './shared';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Cadastro de Pessoas';,
+  title = 'Cadastro de Pessoas';
+
   constructor(
     private router: Router,
     private loginService: LoginService

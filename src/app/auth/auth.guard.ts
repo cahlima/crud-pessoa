@@ -8,10 +8,11 @@ import { Router, Route } from '@angular/router';
 @Injectable({providedIn: 'root'})
 
 export class AuthGuard implements CanActivate {
+
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> |
-    Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> |Promise<boolean | UrlTree> | boolean | UrlTree {
+      
       const usuarioLogado = this.loginService.usuarioLogado;
       let url = state.url;
       if (usuarioLogado) {
@@ -32,10 +33,11 @@ export class AuthGuard implements CanActivate {
     
     }
     }
-  constructor (
+  constructor(
+    
         private loginService: LoginService,
         private router: Router
-  ){}
+  ){ }
         const usuarioLogado = this.loginService.usuarioLogado;
         let url = state.url;
         if (usuarioLogado) {

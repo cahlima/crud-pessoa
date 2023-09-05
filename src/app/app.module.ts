@@ -14,6 +14,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
+import { LoginService } from './auth/services/login.service';
+
+
 
 
 
@@ -21,10 +24,8 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthModule,
-    HomeComponent,
-  
-   
+    HomeComponent
+    
    
   ],
   imports: [
@@ -41,8 +42,7 @@ import { HomeComponent } from './home/home.component';
   ],
 
 
-
-  providers: [],
+  providers: [LoginService],
   
   bootstrap: [AppComponent]
 })
