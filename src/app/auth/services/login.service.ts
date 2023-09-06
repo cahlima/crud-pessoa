@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Usuario, Login } from 'src/app/shared';
 
+const LS_CHAVE: string = "usuarioLogado";
+
 @Injectable({
   providedIn: 'root'
 })
-
-const LS_CHAVE: string = "usuarioLogado";
-
 
 export class LoginService {
 
@@ -42,3 +41,4 @@ export class LoginService {
       }
       }
 
+    }

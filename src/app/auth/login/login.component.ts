@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   login: Login = new Login();
   loading: boolean = false;
   message!: string;
+
 constructor (
 
   private loginService: LoginService,
@@ -28,6 +29,10 @@ constructor (
     if (this.loginService.usuarioLogado) {
       this.router.navigate( ["/home"] );
       }
+  }
+
+  ngOnInit(): void {
+    
   }
   logar(): void {
     this.loading = true;

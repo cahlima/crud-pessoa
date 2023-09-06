@@ -15,6 +15,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
 import { LoginService } from './auth/services/login.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -39,6 +40,8 @@ import { LoginService } from './auth/services/login.service';
     FormsModule,
     NgSelectModule,
     AuthModule,
+    BrowserAnimationsModule,
+    
   ],
 
 

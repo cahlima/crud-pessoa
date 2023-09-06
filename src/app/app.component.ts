@@ -14,7 +14,8 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private login: Login
     ) { }
     get usuarioLogado(): Usuario | null {
     return this.loginService.usuarioLogado;
